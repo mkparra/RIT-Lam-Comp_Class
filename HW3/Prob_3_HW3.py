@@ -168,7 +168,7 @@ plt.legend(["4th Order RK", "Exact solution"], loc=1)
 plt.title("Using the 4th Order RK method")
 plt.xlabel('x values')
 plt.ylabel('y values')
-plt.savefig('4thOrde')
+plt.savefig('4thOrde.png')
 plt.show()
 
 
