@@ -15,11 +15,20 @@ import numpy as np
 class Matrix:
     # The init here is making our matrix to use for the rest of the fuctions
     def __init__(self,dims,fill=True,arr=None):
-        self.rows = len(dims)
-        print(len(dims))
-        self.cols = len(dims[1])
-        print(len(dims[1]))
-        self.g=dims
+        self.rows = dims[0]
+        self.cols = dims[1]
+        
+        
+        # self.g=dims
+        if fill: # If statment for filled Matrix to match rows and cols
+            self.m = [[0]*self.cols for i in range (self.rows)]
+        elif self.rows*self.cols == len(arr):
+            self.m = [[0]*self.cols for i in range (self.rows)]
+            for i in range(self.rows):
+                for j in range(self.cols):
+                    self.m[i][j] = arr[(3*i)+j]
+        else:
+            print("error")   
     
         
 
@@ -167,18 +176,18 @@ class Matrix:
 # print(I.mat_print())
 # print(l.mat_print())
 # print(u.mat_print())
-a=[[1,2,3],[10,23,25],[14,17,18]]
-b=[[1,9,10],[6,2,8],[2,4,3]]
-m1=Matrix(a)
-m2=Matrix(b)
-b=m1.__add__(m2)
-#%%
-        if fill: # If statment for filled Matrix to match rows and cols
-            self.m = [[0]*self.cols for i in range (self.rows)]
-        elif self.rows*self.cols == len(arr):
-            self.m = [[0]*self.cols for i in range (self.rows)]
-            for i in range(self.rows):
-                for j in range(self.cols):
-                    self.m[i][j] = arr[(3*i)+j]
-        else:
-            print("error")   
+# a=[[1,2,3],[10,23,25],[14,17,18]]
+# b=[[1,9,10],[6,2,8],[2,4,3]]
+# m1=Matrix(a)
+# m2=Matrix(b)
+# b=m1.__add__(m2)
+# #%%
+#         if fill: # If statment for filled Matrix to match rows and cols
+#             self.m = [[0]*self.cols for i in range (self.rows)]
+#         elif self.rows*self.cols == len(arr):
+#             self.m = [[0]*self.cols for i in range (self.rows)]
+#             for i in range(self.rows):
+#                 for j in range(self.cols):
+#                     self.m[i][j] = arr[(3*i)+j]
+#         else:
+#             print("error")   
